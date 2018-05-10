@@ -43,7 +43,7 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Contact Us</a></li>
+							<li><a href="help.html">Contact Us</a></li>
 						</ul>
 					</nav>
 
@@ -54,8 +54,8 @@
 								<h1>Customer Support</h1>
 								<p>Looking for an update on your order from one of our sites? Want to request a refund or exchange? Seeing an unrecognized charge, or something else?</p>
 								<p>We're happy to make things right. Contact us below or email <a href="mailto:support@octik.com">support@octik.com</a> and we'll get back to you within 24 hours (usually sooner!)</p>
-								<p>PS: To make it easier for us to locate your order, please share your order ID (format #AB1234) if applicable, or any other relevant details.</p> 
-								<form method="post" action="#">
+								<p><sup>PS: To make it easier for us to locate your order, if applicable please share your order ID (format #AB1234) or any other relevant details.</sup></p> 
+								<form method="POST" action="https://formspree.io/support@octik.com">
 									<div class="field half first">
 										<input type="text" name="name" id="name" placeholder="Name" />
 									</div>
@@ -63,7 +63,19 @@
 										<input type="email" name="email" id="email" placeholder="Email" />
 									</div>
 									<div class="field">
-										<textarea name="message" id="message" placeholder="What can we help you with?"></textarea>
+										<div class="select-wrapper">
+											<select name="demo-category" id="demo-category">
+												<option value="">- Select Category -</option>
+												<option value="Find an order">Find an order</option>
+												<option value="Cancel an order">Cancel an order</option>
+												<option value="Exchanges or refunds">Exchanges or refunds</option>
+												<option value="Unrecognized charge">Unrecognized charge</option>
+												<option value="My question isn't listed">My question isn't listed</option>
+											</select>
+										</div>
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" placeholder="Message"></textarea>
 									</div>
 									<ul class="actions">
 										<li><input type="submit" value="Submit" class="special" /></li>

@@ -32,8 +32,15 @@ Copyright © All rights Reserved
 ----------------------*/
 
 body {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
     position: relative;
+    padding-top: 0;
+    margin: 0; /* Add this line to remove any default margin */
+    overflow-x: hidden; /* Add this line to prevent horizontal scrolling */
 }
 
 a {
@@ -45,16 +52,19 @@ a:focus {
     color: #333;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
 h1 {
-    font-size: 60px;
-    font-weight: 300;
+    font-size: 3rem;
     letter-spacing: -1px;
     margin-bottom: 1.5rem;
 }
 
 h2 {
-    font-size: 45px;
-    font-weight: 300;
+    font-size: 2.5rem;
     color: #fe0702;
     letter-spacing: -1px;
     margin-bottom: 1rem;
@@ -62,12 +72,11 @@ h2 {
 
 h3 {
     color: #fe0702;
-    font-size: 33px;
-    font-weight: 500;
+    font-size: 2rem;
 }
 
 h4 {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: 500;
     color: #fe0702;
 }
@@ -98,7 +107,7 @@ p.lead {
 
 .btn {
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: uppercase;
     padding: 0.375rem 1.35rem;
     transition: all 0.3s ease;
@@ -109,15 +118,16 @@ p.lead {
 }
 
 .btn-primary {
-    border-radius: 3px;
-    background-image: -moz-linear-gradient( 122deg, #e54595 0%, #fd378e 100%);
-    background-image: -webkit-linear-gradient( 122deg, #e54595 0%, #fd378e 100%);
-    background-image: -ms-linear-gradient( 122deg, #e54595 0%, #fd378e 100%);
-    background-image: linear-gradient( 122deg, #e54595 0%, #fd378e 100%);
-    box-shadow: 0px 9px 32px 0px rgba(0, 0, 0, 0.2);
-    font-weight: 500;
-    padding: 0.6rem 2rem;
-    border: 0;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(135deg, #ff0000 0%, #ff9900 100%);
+    border: none;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover,
@@ -162,8 +172,17 @@ p.lead {
     margin-bottom: 3rem;
 }
 
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #fe0702;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
 .section-title small {
-    color: #998a9b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 @media (max-width:767px) {
@@ -179,20 +198,23 @@ p.lead {
 ----------------------*/
 
 .nav-menu {
-    padding: 1rem 0;
+    padding: 15px 0;
     transition: all 0.3s ease;
+    background: transparent !important; /* Force transparency */
+    color: #ffffff;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .nav-menu.is-scrolling,
-
 .nav-menu.menu-is-open {
-    background-color:#ff1300;
-    background: -moz-linear-gradient( 135deg, rgb(255, 0, 0) 0%, rgba(255, 153, 0) 100%);
-    background: -webkit-linear-gradient( 135deg, rgb(255, 0, 0) 0%, rgba(255, 153, 0) 100%);
-    background: linear-gradient( 135deg, rgb(255, 0, 0) 0%, rgba(255, 153, 0) 100%);
-    -webkit-box-shadow: 0px 5px 23px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 5px 23px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 5px 23px 0px rgba(0, 0, 0, 0.1);
+    background: transparent !important; /* Force transparency even when scrolling or menu is open */
+    -webkit-box-shadow: none; /* Remove box shadow */
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
 .nav-menu.is-scrolling {
@@ -227,6 +249,15 @@ p.lead {
     .navbar-nav .nav-item {
         text-align: center;
     }
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 0, 0, 0.9); /* Semi-transparent background for mobile menu */
+        padding: 15px;
+        z-index: 1000;
+    }
 }
 
 
@@ -234,21 +265,27 @@ p.lead {
 ----------------------*/
 
 header {
-    padding: 100px 0 0;
+    padding-top: 100px; /* Reduce this value */
+    margin-top: 0; /* Change this to 0 */
+    padding-bottom: 100px;
     text-align: center;
     color: #FFF;
+    background: -webkit-linear-gradient(135deg, #ff0000 0%, #ff9900 100%);
+    background: -moz-linear-gradient(135deg, #ff0000 0%, #ff9900 100%);
+    background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%);
+    color: #ffffff;
 }
 
 .bg-gradient {
-    background-image: -moz-linear-gradient( 135deg, rgb(255, 0, 0) 0%, rgba(255, 153, 0, 0.8) 100%);
-    background-image: -webkit-linear-gradient( 135deg, rgb(255, 0, 0) 0%, rgba(255, 153, 0, 0.8) 100%);
-    background-image: -ms-linear-gradient( 135deg, rgb(255, 0, 0) 0%, rgba(255, 153, 0, 0.8) 100%);
-    background-image: linear-gradient( 135deg, rgb(255, 0, 0) 0%, rgba(255, 153, 0, 0.8) 100%);
+    background: -webkit-linear-gradient(135deg, #ff0000 0%, #ff9900 100%);
+    background: -moz-linear-gradient(135deg, #ff0000 0%, #ff9900 100%);
+    background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%);
 }
 
 .tagline {
-    font-size: 23px;
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.6;
     color: #ffffff;
     max-width: 800px;
     margin: 0 auto;
@@ -382,13 +419,18 @@ header {
 
 .perspective-phone {
     position: relative;
-    z-index: -1;
+    z-index: 0;
 }
 
-@media (min-width:992px) {
-    .perspective-phone {
-        margin-top: -150px;
-    }
+.perspective-phone img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure the text box maintains its style */
+#global-reach .col-lg-6 {
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -414,7 +456,9 @@ header {
 }
 
 .tab-content h2 {
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fe0702;
 }
 
 .nav-tabs {
@@ -426,7 +470,7 @@ header {
 .nav-tabs .nav-link:hover {
     padding: 1rem 1rem;
     border-color: #eee #faf6fb #FFF;
-    font-size: 19px;
+    font-size: 1.25rem;
     color: #777;
     background: #eee;
 }
@@ -436,6 +480,18 @@ header {
     border-top-width: 3px;
     border-color: #ff0b00 #faf6fb #FFF;
     color: #ff0b00;
+    font-weight: 600;
+}
+
+.nav-tabs .nav-link i {
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+.nav-tabs .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -640,3 +696,388 @@ header {
         margin-top: 2rem;
     }
 }
+
+/* Modern Contact Section Styles */
+#contact.bg-gradient {
+    padding: 100px 0;
+    color: #FFF;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #FFF;
+    font-weight: 600;
+}
+
+#contact .tagline {
+    font-size: 1.1rem;
+    color: #FFF;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form.light-bg {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-control {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 0;
+    padding: 15px 0;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: #333;
+    width: 100%; /* Ensure full width */
+}
+
+.contact-form .form-control::placeholder {
+    color: #999;
+}
+
+.contact-form .form-control:focus {
+    box-shadow: none;
+    border-color: #ff0b00;
+}
+
+.contact-form textarea.form-control {
+    min-height: 120px;
+}
+
+.contact-form .btn-primary {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(135deg, #ff0000 0%, #ff9900 100%);
+    border: none;
+    color: #fff;
+}
+
+.contact-form .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    #contact {
+        padding: 60px 0;
+    }
+    
+    .contact-info {
+        margin-bottom: 40px;
+    }
+    
+    .contact-form {
+        padding: 30px;
+    }
+}
+
+/* Additional styles for the contact form layout */
+.contact-form .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.contact-form .form-group {
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.contact-form textarea.form-control,
+.contact-form .btn-primary {
+    width: 100%; /* Ensure full width for textarea and button */
+}
+
+@media (max-width: 767px) {
+    .contact-form .row {
+        margin-bottom: 0;
+    }
+    
+    .contact-form .form-group {
+        margin-bottom: 25px;
+    }
+}
+
+/* Ensure consistent padding for all form elements */
+.contact-form .col-md-6,
+.contact-form .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Adjust button alignment */
+.contact-form .btn-primary {
+    display: block;
+    width: 100%;
+}
+
+/* Footer Styles */
+.footer-section {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer-section p {
+    margin-bottom: 0;
+    color: #6c757d;
+}
+
+.career-link {
+    color: #ff0b00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.career-link:hover {
+    color: #cc0900;
+    text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+    .footer-section .text-md-right {
+        text-align: left !important;
+        margin-top: 10px;
+    }
+}
+
+/* Add these styles to your existing CSS file */
+
+#global-reach .ti-3x {
+    font-size: 2em;
+    line-height: 1;
+}
+
+#global-reach .gradient-fill {
+    background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+#global-reach .d-flex {
+    align-items: flex-start;
+}
+
+#global-reach .d-flex span {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #959094; /* This matches the color used for card-text and other paragraph elements */
+}
+
+@media (max-width: 767px) {
+    #global-reach .col-md-6 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+#global-reach .btn-primary {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(135deg, #ff0000 0%, #ff9900 100%);
+    border: none;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#global-reach .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #ff0b00;
+}
+
+.btn-lg {
+    padding: 15px 32px;
+    font-size: 1.1rem;
+}
+
+/* Ensure the mobile menu button is visible */
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Add these styles to ensure full-width sections */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Equal height cards */
+.equal-height-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.equal-height-cards > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.equal-height-cards .card {
+    flex: 1;
+}
+
+.equal-height-cards .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.equal-height-cards .card-text {
+    flex-grow: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .equal-height-cards > [class*='col-'] {
+        margin-bottom: 20px;
+    }
+}
+
+.tab-content-inner {
+    padding: 2rem 0;
+}
+
+.tab-content-inner h2 {
+    margin-bottom: 1rem;
+}
+
+.tab-content-inner p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .tab-content-inner {
+        padding: 1.5rem 0;
+    }
+}
+
+/* Update the global reach section styles */
+#global-reach {
+    background-color: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+#global-reach::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 247, 240, 0.9) 0%, rgba(255, 237, 220, 0.9) 100%);
+    z-index: 0;
+}
+
+#global-reach .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Update the perspective-phone class */
+.perspective-phone {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.perspective-phone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Style the text box */
+#global-reach .col-lg-6 {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#global-reach h2 {
+    color: #ff0b00;
+    margin-bottom: 20px;
+}
+
+#global-reach p, #global-reach span {
+    color: #333;
+}
+
+/* Media query for tablet and desktop */
+@media (min-width: 992px) {
+    #global-reach .container {
+        display: flex;
+        align-items: center;
+    }
+
+    #global-reach .col-lg-6 {
+        width: 50%;
+        flex: 0 0 50%;
+    }
+
+    .perspective-phone {
+        width: 50%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        max-width: calc(50% - 15px); /* Adjust based on your container's padding */
+    }
+}
+
+/* Additional media query for very large screens */
+@media (min-width: 1200px) {
+    #global-reach {
+        padding: 100px 0;
+    }
+}
+
+

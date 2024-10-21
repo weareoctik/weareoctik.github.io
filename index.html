@@ -236,25 +236,25 @@
                     <p class="tagline">Ready to go global? Our e-commerce team is here to help you expand your reach and sell to an international audience. Let's chat!</p>
                 </div>
                 <div class="col-md-6">
-                    <form class="contact-form light-bg">
+                    <form class="contact-form light-bg" action="https://formspree.io/f/mrbgbpvw" method="POST">
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="Full Name *" required>
+                                <input type="text" class="form-control" name="name" placeholder="Full Name *" required>
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="email" class="form-control" placeholder="Email *" required>
+                                <input type="email" class="form-control" name="email" placeholder="Email *" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="Company Name *" required>
+                                <input type="text" class="form-control" name="company" placeholder="Company Name *" required>
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="tel" class="form-control" placeholder="Phone">
+                                <input type="tel" class="form-control" name="phone" placeholder="Phone">
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="4" placeholder="Inquiry *" required></textarea>
+                            <textarea class="form-control" name="message" rows="4" placeholder="Inquiry *" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
